@@ -160,12 +160,17 @@ public class FixMake implements IMaker
     private void fill()
     {
         int loc = 0;
+        int dependency = 0;
 
         for (int i = 0; i < (teamIDs.size() - 1) * 2; i++)
         {
-            if (loc >= matches.size()) {loc = 0;}
+            if (loc >= matches.size())
+            {
+                loc = 0;
+                if ((teamIDs.size() - 1) % 2  == 0) dependency = 1;
+            }
 
-            if ((i + 2) % 2 == 0)
+            if ((i + 2) % 2 == dependency)
             {
                 String week = null;
 
