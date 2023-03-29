@@ -13,13 +13,13 @@ public class Main {
         teams.add("Bayern München");
         teams.add("Milan");
         teams.add("Napoli");
-        /*teams.add("Inter");
+        teams.add("Inter");
         teams.add("Manchester City");
         teams.add("Benfica");
-        teams.add("Chelsea");*/
+        teams.add("Chelsea");
 
         Generator generate = new Generator();
-        Pool pool = new Pool(teams, RunType.CLASSIC);
+        Pool pool = new Pool(teams, RunType.PLAYOFF);
         generate.fixture(pool, true);
 
         System.out.println(generate.getResult());
